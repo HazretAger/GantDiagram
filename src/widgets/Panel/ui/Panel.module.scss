@@ -1,0 +1,39 @@
+@import '@/app/globalStyles/config/mixin.scss';
+
+.Panel {
+    height: 100vh;
+}
+
+.ResizeButton {
+    position: absolute;
+    display: flex;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: greenyellow;
+}
+
+.LeftPanelButton {
+    justify-content: left;
+    right: -15px;
+}
+
+.RightPanelButton {
+    justify-content: right;
+    left: -15px;
+}
+
+.LeftSide {
+    background-color: #f0f0f0;
+    height: 100%;
+}
+
+.RightSide {
+    position: relative;
+    background-color: #d0d0d0;
+    height: 100%;
+}

@@ -12,20 +12,23 @@ import { useTheme } from '@/app/providers/ThemeProviders';
 
 const router = createBrowserRouter([
     { path: '/login', element: <LoginPage /> },
-    {
-        element: <ProtectedRoute />,
-        children: [
-            {
-                path: '/',
-                element: <MainLayout />,
-                children: [
-                    { index: true, element: <MainPage /> },
-                    { path: 'contact', element: <ContactPage /> },
-                    { path: 'someTests', element: <SomeTestPage /> },
-                ],
-            },
-        ],
-    },
+    { path: '/', element: <MainPage /> },
+    { path: 'contact', element: <ContactPage /> },
+    { path: 'someTests', element: <SomeTestPage /> },
+    // {
+    //     element: <ProtectedRoute />,
+    //     children: [
+    //         {
+    //             path: '/',
+    //             element: <MainLayout />,
+    //             children: [
+    //                 { index: true, element: <MainPage /> },
+    //                 { path: 'contact', element: <ContactPage /> },
+    //                 { path: 'someTests', element: <SomeTestPage /> },
+    //             ],
+    //         },
+    //     ],
+    // },
     { path: '*', element: <NotFoundPage /> },
 ]);
 

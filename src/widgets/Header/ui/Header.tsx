@@ -18,14 +18,12 @@ export const Header = (props: HeaderProps) => {
         <header className={classNames(cls.Header, {}, [className])}>
             <Wrapper>
                 <div className={cls.content}>
-                    <div className={cls.logo}>
-                        <AppLink to="/" icon={<Logo className={cls.logoIcon} />} />
-                    </div>
+                    <div className={cls.logo}>{/* <AppLink to="/" icon={<Logo className={cls.logoIcon} />} /> */}</div>
                     <div className={cls.block}>
                         <Menu />
                         <LogoutButton />
                         <SideMenuButton />
-                        <ThemeButton />
+                        {/* <ThemeButton /> */}
                     </div>
                 </div>
             </Wrapper>

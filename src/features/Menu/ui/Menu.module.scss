@@ -1,0 +1,10 @@
+@import '@/app/globalStyles/config/mixin.scss';
+
+.Menu {
+    display: block;
+}
+
+.list {
+    display: flex;
+    gap: 24px;
+}

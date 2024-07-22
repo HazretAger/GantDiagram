@@ -1,0 +1,6 @@
+export interface {{sliceName}}Schema {
+    isModalActive: boolean;
+    editable{{sliceName}}Id?: number;
+    toggleModal: () => void;
+    changingEditable{{sliceName}}: ({{lowerCase sliceName}}Id?: number) => void;
+}

@@ -1,0 +1,13 @@
+import { {{sliceName}}Type } from '../model/types/{{lowerCase sliceName}}';
+import { $api } from '@/shared/api/axiosInstance';
+
+type Fetch{{sliceName}}ByIdProps = {
+    {{lowerCase sliceName}}_id: number;
+};
+type Fetch{{sliceName}}ByIdResponse = {{sliceName}}Type;
+
+export const fetch{{sliceName}}ById = async (props: Fetch{{sliceName}}ByIdProps) => {
+    const { data } = await $api.post<Fetch{{sliceName}}ByIdResponse>('/{{lowerCase sliceName}}-by-id', props);
+
+    return data;
+};

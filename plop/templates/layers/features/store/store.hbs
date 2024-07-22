@@ -1,0 +1,12 @@
+import { create } from 'zustand';
+import { devtools } from 'zustand/middleware';
+import { {{sliceName}}Schema } from '../types/{{lowerCase sliceName}}Schema';
+
+export const use{{sliceName}}Store = create<{{sliceName}}Schema>()(
+    devtools((set, get) => ({
+        isModalActive: false,
+        editable{{sliceName}}: undefined,
+        toggleModal: () => set({ isModalActive: !get().isModalActive }),
+        changingEditable{{sliceName}}: ({{lowerCase sliceName}}Id) => set({ editable{{sliceName}}Id: {{lowerCase sliceName}}Id }),
+    }))
+);

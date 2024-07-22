@@ -1,0 +1,33 @@
+body.light {
+    //Text colors
+    --t-primery-c: var(--color-black);
+    --t-accent-c: var(--color-green);
+    --t-accent-c-2: var(--color-green2);
+    --t-inverted-c: var(--color-white);
+    --t-descriptive-c-2: var(--color-gray2);
+    --t-descriptive-c-3: var(--color-gray4);
+    --t-descriptive-c-4: var(--color-blue);
+    --t-descriptive-c-5: var(--color-gray5);
+
+    //Surface colors
+    --s-primery-c: var(--color-green2);
+    --s-inverted-c: var(--color-white);
+    --s-accent-c: var(--color-green);
+    --s-secondary-c-1: var(--color-black);
+    --s-secondary-c-2: var(--color-gray4);
+    --s-secondary-c-3: var(--color-gray5);
+    --s-secondary-c-4: var(--color-rgba255);
+    --s-secondary-c-5: var(--color-gray2);
+    --s-secondary-c-6: var(--color-blue);
+    --s-secondary-c-7: var(--color-gray3);
+    --s-secondary-c-8: var(--color-gray7);
+    --s-secondary-c-9: var(--color-gray6);
+    --s-secondary-c-10: var(--color-gray8);
+    --s-gradient-c-1: var(--color-gradientGreen);
+    --s-gradient-c-2: var(--color-gradientGreen2);
+    --s-gradient-c-3: var(--color-gradientGreen3);
+    --error-primery-color: var(--color-red-1);
+
+    //Background colors
+    --bg-primery-c: var(--color-gray6);
+}

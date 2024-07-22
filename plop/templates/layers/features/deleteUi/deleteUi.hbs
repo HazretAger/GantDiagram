@@ -1,0 +1,27 @@
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button';
+import { useDelete{{sliceName}} } from '../../lib/query/useDelete{{sliceName}}';
+import cls from './Delete{{sliceName}}.module.scss';
+
+interface Delete{{sliceName}}Props {
+    className?: string;
+    {{lowerCase sliceName}}Id: number;
+}
+
+export const Delete{{sliceName}} = (props: Delete{{sliceName}}Props) => {
+    const { className, {{lowerCase sliceName}}Id } = props;
+    const { mutate: onDelete } = useDelete{{sliceName}}();
+
+    return (
+        <Button
+            className={classNames(cls.Delete{{sliceName}}, {}, [className])}
+            theme={ButtonTheme.PRIMARY}
+            size={ButtonSize.S}
+            onClick={() => onDelete({
+                {{lowerCase sliceName}}_id: {{lowerCase sliceName}}Id
+            })}
+        >
+            Удалить
+        </Button>
+    );
+};

@@ -1,0 +1,15 @@
+import { $api } from '@/shared/api/axiosInstance';
+
+type Delete{{sliceName}}Props = {
+    {{lowerCase sliceName}}_id: number;
+};
+type Delete{{sliceName}}Response = {
+    status: number;
+    message: string;
+};
+
+export const delete{{sliceName}} = async (props: Delete{{sliceName}}Props) => {
+    const { data } = await $api.post<Delete{{sliceName}}Response>(`/{{lowerCase sliceName}}s/delete`, props);
+
+    return data;
+};

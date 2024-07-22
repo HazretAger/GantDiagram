@@ -1,0 +1,59 @@
+@import '@/app/globalStyles/config/mixin.scss';
+
+.Checkbox {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+}
+
+.window {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    background: var(--s-inverted-c);
+    border: 1px solid var(--s-primery-c);
+    border-radius: 1px;
+    transition: 0.5s;
+}
+
+.iconMark {
+    opacity: 0;
+    fill: var(--s-primery-c);
+    transition: 0.5s;
+}
+
+.name {
+    display: flex;
+    align-items: flex-start;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 22px;
+    color: var(--t-primery-c);
+    letter-spacing: 0.04em;
+    cursor: pointer;
+}
+
+.content {
+    padding-top: 1px;
+}
+
+.input:checked + .name {
+    .iconMark {
+        opacity: 1;
+    }
+}
+
+.link {
+    color: var(--t-accent-c);
+    text-decoration: none;
+    border-bottom: 1px solid var(--s-primery-c);
+    transition: 0.5s;
+
+    &:hover {
+        border-bottom: 1px solid transparent;
+    }
+}

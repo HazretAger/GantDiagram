@@ -1,0 +1,14 @@
+import { useQuery } from '@tanstack/react-query';
+import { fetch{{sliceName}}ById } from '../../api/fetch{{sliceName}}ById';
+
+export const useFetch{{sliceName}}ById = ({{lowerCase sliceName}}Id: number | undefined) => {
+
+    return useQuery({
+        queryKey: ['fetch{{sliceName}}ById', {{lowerCase sliceName}}Id],
+        queryFn: () =>
+            fetch{{sliceName}}ById({
+                {{lowerCase sliceName}}_id: {{lowerCase sliceName}}Id || 1
+            }),
+        enabled: !!{{lowerCase sliceName}}Id,
+    });
+};

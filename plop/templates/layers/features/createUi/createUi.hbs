@@ -1,0 +1,30 @@
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button';
+import { use{{sliceName}}Store } from '../../model/store/use{{sliceName}}Store';
+import cls from './Create{{sliceName}}.module.scss';
+
+interface Create{{sliceName}}Props {
+    className?: string;
+}
+
+export const Create{{sliceName}} = (props: Create{{sliceName}}Props) => {
+    const { className } = props;
+    const toggleModal = use{{sliceName}}Store((state) => state.toggleModal);
+    const changingEditable{{sliceName}} = use{{sliceName}}Store((state) => state.changingEditable{{sliceName}});
+
+    const openEdit{{sliceName}}Form = () => {
+        changingEditable{{sliceName}}(undefined);
+        toggleModal();
+    };
+
+    return (
+        <Button
+            className={classNames(cls.Create{{sliceName}}, {}, [className])}
+            theme={ButtonTheme.PRIMARY}
+            size={ButtonSize.XL}
+            onClick={openEdit{{sliceName}}Form}
+        >
+            Создать слайс
+        </Button>
+    );
+};

@@ -1,0 +1,10 @@
+import { {{sliceName}}Type } from '../model/types/{{lowerCase sliceName}}';
+import { $api } from '@/shared/api/axiosInstance';
+
+type Fetch{{sliceName}}sResponse = {{sliceName}}Type[];
+
+export const fetch{{sliceName}}s = async () => {
+    const { data } = await $api.get<Fetch{{sliceName}}sResponse>(`/{{lowerCase sliceName}}s`);
+
+    return data;
+};

@@ -1,0 +1,18 @@
+import { $api } from '@/shared/api/axiosInstance';
+import { {{sliceName}}Type } from '@/entities/{{sliceName}}';
+
+type Create{{sliceName}}Props = {
+    user_id: number;
+};
+
+type Create{{sliceName}}Response = {
+    status: number;
+    message: string;
+    {{lowerCase sliceName}}: {{sliceName}}Type;
+};
+
+export const create{{sliceName}} = async (props: Create{{sliceName}}Props) => {
+    const { data } = await $api.post<Create{{sliceName}}Response>(`/{{lowerCase sliceName}}s/create`, props);
+
+    return data;
+};

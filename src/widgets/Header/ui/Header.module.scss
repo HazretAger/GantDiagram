@@ -1,0 +1,36 @@
+@import '@/app/globalStyles/config/mixin.scss';
+
+.Header {
+    padding: 40px 0;
+    margin-bottom: 30px;
+
+    @include before-1024 {
+        padding: 20px 0;
+        margin-bottom: 0;
+    }
+}
+
+.content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.block {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.blockItem {
+    margin-right: 24px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.logoIcon {
+    fill: var(--s-primery-c);
+}

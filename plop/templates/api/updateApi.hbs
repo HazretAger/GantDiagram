@@ -1,0 +1,17 @@
+import { $api } from '@/shared/api/axiosInstance';
+
+type Update{{sliceName}}Props = {
+    {{lowerCase sliceName}}_id: number;
+    user_id: number;
+};
+
+type Update{{sliceName}}Response = {
+    status: number;
+    message: string;
+};
+
+export const update{{sliceName}} = async (props: Update{{sliceName}}Props) => {
+    const { data } = await $api.post<Update{{sliceName}}Response>(`/{{lowerCase sliceName}}s/update`, props);
+
+    return data;
+};

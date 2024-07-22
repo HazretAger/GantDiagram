@@ -1,0 +1,33 @@
+.PageLoader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    // display: none;
+    width: 100vw;
+    height: 100vh;
+    background: var(--bg-primery-c);
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+}
+
+.icon {
+    width: 100%;
+    height: auto;
+}

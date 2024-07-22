@@ -1,0 +1,24 @@
+@import '@/app/globalStyles/config/mixin.scss';
+
+.Textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 19px;
+    font-size: 16px;
+    color: var(--t-primery-c);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    resize: none;
+
+    &::placeholder {
+        font-size: 16px;
+        line-height: 140%;
+        color: var(--t-descriptive-c-5);
+        letter-spacing: 0.04em;
+
+        @include before-768 {
+            font-size: 16px;
+        }
+    }
+}

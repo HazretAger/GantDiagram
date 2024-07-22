@@ -1,0 +1,13 @@
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { create{{sliceName}} } from '../../api/create{{sliceName}}';
+
+export const useCreate{{sliceName}} = () => {
+    const queryClient = useQueryClient();
+
+    return useMutation({
+        mutationFn: create{{sliceName}},
+        onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ['fetch{{sliceName}}s'] });
+        },
+    });
+};

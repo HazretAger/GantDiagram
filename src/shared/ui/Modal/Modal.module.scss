@@ -1,0 +1,118 @@
+@import '@/app/globalStyles/config/mixin.scss';
+
+.Modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    //z-index: var(--modal-z-index);
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: 0.5s;
+    z-index: 100;
+
+    &.opened {
+        visibility: visible;
+        opacity: 1;
+
+        .content {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+    }
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+    padding: 30px 10px;
+}
+
+.content {
+    position: relative;
+    background: var(--s-inverted-c);
+    transition: 0.5s;
+    transform: translate(0, -100%);
+    opacity: 0;
+    width: 100%;
+    max-width: 778px;
+    padding: 60px;
+    border-radius: 32px;
+
+    @include before-768 {
+        padding: 20px 24px 24px;
+    }
+}
+
+.title {
+    margin-bottom: 36px;
+    font-size: 32px;
+    line-height: 45px;
+    color: var(--t-primery-c);
+
+    @include before-768 {
+        font-size: 22px;
+        line-height: 33px;
+    }
+}
+
+.text {
+    margin: 0 0 10px;
+    font-weight: normal;
+    color: var(--t-primery-c);
+}
+
+.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(30%, -30%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: var(--s-primery-c);
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: var(--s-accent-c);
+    }
+}
+
+.closeIcon {
+    fill: var(--s-inverted-c);
+    transition: 0.3s;
+}
+
+// Темы
+.onSide {
+    background-color: transparent;
+
+    .container {
+        align-items: stretch;
+        justify-content: flex-start;
+        min-height: 100%;
+        padding: 0;
+    }
+
+    .content {
+        transform: translate(-100%, 0);
+        max-width: 700px;
+        padding: 48px;
+        box-shadow: -5px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        border-radius: 0;
+    }
+
+    .close {
+        display: none;
+    }
+}

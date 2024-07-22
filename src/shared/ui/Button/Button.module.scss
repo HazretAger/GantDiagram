@@ -1,0 +1,121 @@
+@import '@/app/globalStyles/config/mixin.scss';
+
+.Button {
+    --custom-width: auto;
+
+    box-sizing: border-box;
+    display: inline-flex;
+    gap: 7px;
+    align-items: center;
+    justify-content: center;
+    width: var(--custom-width);
+    padding: 0;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.icon {
+    display: inline-block;
+
+    svg {
+        display: block;
+    }
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
+.spinnerBox {
+    display: flex;
+    align-items: center;
+}
+
+.spinner {
+    width: 20px;
+    height: auto;
+    stroke: var(--s-inverted-c);
+    transition: 0.5s;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+// Themes
+.primary {
+    color: var(--t-inverted-c);
+    text-align: center;
+    background-color: var(--s-primery-c);
+    border: 1px solid var(--s-primery-c);
+    border-radius: 30px;
+    transition: 0.5s;
+
+    .icon {
+        svg {
+            fill: var(--s-inverted-c);
+            transition: 0.5s;
+        }
+    }
+
+    &:hover {
+        color: var(--t-accent-c);
+        background-color: var(--s-inverted-c);
+
+        .spinner {
+            stroke: var(--s-inverted-c);
+        }
+
+        .icon {
+            svg {
+                fill: var(--s-accent-c);
+                transition: 0.5s;
+            }
+        }
+    }
+
+    &[disabled] {
+        background-color: var(--s-secondary-c-2);
+        border-color: var(--s-secondary-c-2);
+        pointer-events: none;
+    }
+}
+
+.navigation {
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--t-descriptive-c-2);
+    letter-spacing: 0.04em;
+
+    @include before-1024 {
+        font-size: 12px;
+        line-height: 14px;
+    }
+}
+
+// Sizes
+.xl {
+    padding: 20px 50px;
+    font-size: 16px;
+}
+
+.l {
+    padding: 16px 32px;
+    font-size: 14px;
+}
+
+.m {
+    padding: 12px 24px;
+    font-size: 14px;
+}
+
+.s {
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.null {
+    font-size: 14px;
+}

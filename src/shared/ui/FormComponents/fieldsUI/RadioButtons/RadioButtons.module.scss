@@ -1,0 +1,104 @@
+@import '@/app/globalStyles/config/mixin.scss';
+
+.RadioButtons {
+    display: block;
+}
+
+.listTitle {
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: var(--t-primery-c);
+}
+
+.list {
+    display: flex;
+}
+
+.item {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+
+    &:not(:last-child) {
+        margin-right: 30px;
+    }
+}
+
+.window {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    margin-right: 12px;
+    background: transparent;
+    border: 1px solid var(--s-secondary-c-5);
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.circle {
+    width: 16px;
+    height: 16px;
+    background: var(--s-accent-c);
+    border-radius: 50%;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 24px;
+    color: #121212b2;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+}
+
+.input:checked + .name {
+    .circle {
+        opacity: 1;
+    }
+
+    .window {
+        border-color: var(--s-accent-c);
+    }
+}
+
+//Themes
+.param {
+    display: inline-block;
+
+    .list {
+        background-color: var(--s-secondary-c-3);
+        border: 1px solid var(--s-secondary-c-5);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .item {
+        &:not(:last-child) {
+            border-right: 1px solid var(--s-secondary-c-5);
+            margin-right: 0;
+        }
+    }
+
+    .window {
+        display: none;
+    }
+
+    .name {
+        padding: 18px 24px;
+        font-weight: 500;
+        background-color: var(--s-inverted-c);
+        transition: 0.3s;
+    }
+
+    .input:checked + .name {
+        color: var(--s-inverted-c);
+        background-color: var(--s-accent-c);
+    }
+}

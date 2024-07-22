@@ -1,0 +1,44 @@
+@import '@/app/globalStyles/config/mixin.scss';
+
+.Cell {
+    display: block;
+}
+
+.content {
+    position: relative;
+    height: 100%;
+}
+
+.name {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: var(--t-primery-c);
+}
+
+.data {
+    position: relative;
+    //padding: 19px;
+    background-color: var(--s-inverted-c);
+    border: 1px solid var(--s-secondary-c-7);
+    border-radius: 12px;
+    transition: 0.5s;
+
+    @include before_768 {
+        padding: 12px 16px;
+    }
+}
+
+.note {
+    margin-top: 4px;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--s-secondary-c-5);
+}
+
+.errorMessage {
+    margin-top: 6px;
+    font-size: 14px;
+    line-height: 140%;
+    color: var(--error-primery-color);
+}

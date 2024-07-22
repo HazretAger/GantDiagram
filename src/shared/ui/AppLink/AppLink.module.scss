@@ -1,0 +1,98 @@
+@import '@/app/globalStyles/config/mixin.scss';
+
+.AppLink {
+    --custom-width: auto;
+
+    display: inline-flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    width: var(--custom-width);
+    color: var(--t-primery-c);
+    text-decoration: none;
+}
+
+.icon {
+    svg {
+        display: block;
+    }
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
+// Themes
+.primary {
+    color: var(--t-inverted-c);
+    text-align: center;
+    background-color: var(--s-accent-c);
+    border: 1px solid var(--s-accent-c);
+    border-radius: 30px;
+    transition: 0.5s;
+
+    .icon {
+        svg {
+            fill: var(--t-primery-c);
+            transition: 0.5s;
+        }
+    }
+
+    &:hover {
+        color: var(--t-accent-c);
+        background-color: var(--s-inverted-c);
+
+        .spinner {
+            stroke: var(--s-inverted-c);
+        }
+    }
+
+    &[disabled] {
+        background-color: var(--s-secondary-c-2);
+        border-color: var(--s-secondary-c-2);
+        pointer-events: none;
+    }
+}
+
+.navigation {
+    font-size: 14px;
+    color: var(--t-descriptive-c-2);
+    letter-spacing: 0.04em;
+
+    @include before-1024 {
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .icon {
+        svg {
+            fill: var(--t-descriptive-c-2);
+        }
+    }
+}
+
+// Sizes
+.xl {
+    padding: 20px 50px;
+    font-size: 16px;
+}
+
+.l {
+    padding: 16px 32px;
+    font-size: 14px;
+}
+
+.m {
+    padding: 12px 24px;
+    font-size: 14px;
+}
+
+.s {
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.xs {
+    padding: 5px 12px;
+    font-size: 14px;
+}

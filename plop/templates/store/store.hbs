@@ -1,0 +1,10 @@
+import { create } from 'zustand';
+import { devtools } from 'zustand/middleware';
+import { {{sliceName}}Schema } from '../types/{{lowerCase sliceName}}Schema';
+
+export const use{{sliceName}}Store = create<{{sliceName}}Schema>()(
+    devtools((set, get) => ({
+        isModalActive: false,
+        toggleModal: () => set({ isModalActive: !get().isModalActive }),
+    }))
+);

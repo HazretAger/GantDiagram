@@ -1,0 +1,72 @@
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { FormProvider, useForm } from 'react-hook-form';
+import { HInput } from '@/shared/ui/FormComponents';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button';
+import cls from './{{name}}.module.scss';
+
+const {{name}}Schema = z.object({
+    title: z //
+        .string()
+        .min(1, { message: 'Заполните поле' })
+        .max(255),
+    body: z //
+        .string()
+        .min(1, { message: 'Заполните поле' })
+        .max(255),
+});
+
+type {{name}}Type = z.infer<typeof {{name}}Schema>;
+
+interface {{name}}Props {
+    className?: string
+}
+
+const defaultValues = {
+    first: '',
+    second: '',
+};
+
+export const {{name}} = (props: {{name}}Props) => {
+    const { className } = props;
+
+    const methods = useForm<{{name}}Type>({
+        defaultValues,
+        resolver: zodResolver({{name}}Schema),
+    });
+
+    const { handleSubmit } = methods;
+
+    const submitHandler = async (data: {{name}}Type) => {
+        console.log('data: ', data);
+    };
+
+    return (
+        <div className={classNames(cls.{{name}}, {}, [className])}>
+            <FormProvider {...methods}>
+                <form onSubmit={handleSubmit(submitHandler)}>
+                    <HInput //
+                        className={cls.field}
+                        name="first"
+                        placeholder="Введите название"
+                    />
+                    <HInput //
+                        className={cls.field}
+                        name="second"
+                        placeholder="Введите описание"
+                    />
+                    <Button
+                        theme={ButtonTheme.PRIMARY}
+                        size={ButtonSize.XL}
+                        type="submit"
+                        // showSpinner={isAddUserLoading}
+                        // disabled={isAddUserLoading}
+                    >
+                        Сохранить
+                    </Button>
+                </form>
+            </FormProvider>
+        </div>
+    );
+};

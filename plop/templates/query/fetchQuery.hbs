@@ -1,0 +1,9 @@
+import { useQuery } from '@tanstack/react-query';
+import { fetch{{sliceName}}s } from '../../api/fetch{{sliceName}}s';
+
+export const useFetch{{sliceName}}s = () => {
+    return useQuery({
+        queryKey: ['fetch{{sliceName}}s'],
+        queryFn: () => fetch{{sliceName}}s(),
+    });
+};

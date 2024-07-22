@@ -1,0 +1,31 @@
+import { ReactNode } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { {{sliceName}}Type } from '../../model/types/{{lowerCase sliceName}}';
+import cls from './{{sliceName}}Card.module.scss';
+
+interface {{sliceName}}CardProps {
+    className?: string;
+    {{lowerCase sliceName}}: {{sliceName}}Type;
+    editButton?: ReactNode;
+    deleteButton?: ReactNode;
+}
+
+export const {{sliceName}}Card = (props: {{sliceName}}CardProps) => {
+    const { className, {{lowerCase sliceName}}, editButton, deleteButton } = props;
+
+    return (
+        <div className={classNames(cls.{{sliceName}}Card, {}, [className])}>
+            <div className={cls.content}>
+                <div className={cls.name}>
+                    {
+                        {{lowerCase sliceName}}.title
+                    }
+                </div>
+                <div className={cls.buttons}>
+                    {editButton}
+                    {deleteButton}
+                </div>
+            </div>
+        </div>
+    );
+};

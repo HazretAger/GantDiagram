@@ -1,0 +1,31 @@
+// Медиа запросы для разных ширин экрана
+// Пример использования: @include desktop-1200 {font-size: 20px;}
+@mixin before-1366 {
+    @media screen and (max-width: 1365px) {
+        @content;
+    }
+}
+
+@mixin before-1200 {
+    @media screen and (max-width: 1199px) {
+        @content;
+    }
+}
+
+@mixin before-1024 {
+    @media screen and (max-width: 1023px) {
+        @content;
+    }
+}
+
+@mixin before-768 {
+    @media screen and (max-width: 767px) {
+        @content;
+    }
+}
+
+@mixin before-480 {
+    @media screen and (max-width: 479px) {
+        @content;
+    }
+}

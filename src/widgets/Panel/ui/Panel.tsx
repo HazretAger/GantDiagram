@@ -1,16 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import SplitPane, { Pane } from 'split-pane-react';
-import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button';
 import PrevArrow from '@/shared/assets/icons/arrowNext.svg?react';
 import NextArrow from '@/shared/assets/icons/arrowPrev.svg?react';
 import 'split-pane-react/esm/themes/default.css';
 import cls from './Panel.module.scss';
 
-interface PanelProps {
-    className?: string;
-}
-
-export const Panel = (props: PanelProps) => {
+export const Panel = () => {
     const [sizes, setSizes] = useState([50, 50]);
 
     const rightSideHandler = () => {
@@ -35,6 +30,7 @@ export const Panel = (props: PanelProps) => {
 
     return (
         <div className={cls.Panel}>
+            {/*@ts-ignore */}
             <SplitPane split="vertical" sizes={sizes} onChange={setSizes}>
                 <Pane maxSize="100%">
                     <div className={cls.LeftSide}>

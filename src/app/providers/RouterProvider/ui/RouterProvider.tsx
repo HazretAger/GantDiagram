@@ -2,12 +2,10 @@ import { Suspense } from 'react';
 import { createBrowserRouter, RouterProvider as RouterProviderLib } from 'react-router-dom';
 import { MainPage } from '@/pages/MainPage';
 import { LoginPage } from '@/pages/LoginPage';
-import { ProtectedRoute } from './ProtectedRoute';
 import { ContactPage } from '@/pages/ContactPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 import { SomeTestPage } from '@/pages/SomeTestPage';
 import { PageLoader } from '@/shared/ui/PageLoader';
-import { MainLayout } from '@/app/layouts/MainLayout';
 import { useTheme } from '@/app/providers/ThemeProviders';
 
 const router = createBrowserRouter([
